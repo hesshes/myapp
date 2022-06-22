@@ -1,12 +1,15 @@
 package com.shopcar.shopcar.persistence;
 
+import static org.junit.Assert.fail;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+import org.apache.log4j.Logger;
 import org.junit.Test;
 
 public class JDBCTest {
-
+	private Logger logger = Logger.getLogger(JDBCTest.class);
 	static {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -19,9 +22,9 @@ public class JDBCTest {
 	@Test
 	public void testConnection() {
 		try (Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system", "oracle")) {
-			System.out.println("eee 접속 성공");
+			logger.info(con);
 		} catch (Exception e) {
-			// TODO: handle exception
+			fail(e.getMessage());
 		}
 
 	}
