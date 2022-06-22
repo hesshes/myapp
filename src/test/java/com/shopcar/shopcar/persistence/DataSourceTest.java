@@ -21,14 +21,14 @@ import lombok.Setter;
 @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
 public class DataSourceTest {
 
-	@Setter(onMethod_ = {@Autowired})
+	@Setter(onMethod_ = { @Autowired })
 	private DataSource ds;
 
-	@Setter(onMethod_ = {@Autowired})
+	@Setter(onMethod_ = { @Autowired })
 	private SqlSessionFactory ssf;
-	
+
 	private Logger logger = Logger.getLogger(DataSource.class);
-	
+
 	@Test
 	public void testMybatis() {
 		try (SqlSession session = ssf.openSession(); Connection con = ds.getConnection()) {
@@ -38,7 +38,5 @@ public class DataSourceTest {
 			fail(e.getMessage());
 		}
 	}
-
-	
 
 }
