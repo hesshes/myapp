@@ -7,7 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	main pagㄷ
-	<h3><a href="/shopcar/member/memjoin">회원가입 이동</a></h3>
+	main page
+	<h3><a href="${pageContext.request.contextPath}/member/memjoin">회원가입 이동</a></h3>
+	
 </body>
 </html>
