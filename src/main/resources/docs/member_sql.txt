@@ -12,3 +12,6 @@
 select * from mem_user;
 
 commit;
+
+
+testetset
